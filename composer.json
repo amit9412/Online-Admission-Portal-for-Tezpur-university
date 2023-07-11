@@ -1,0 +1,9 @@
+{
+    "require": {
+        "mongodb/mongodb": "^1.9",
+        "ratiw/jsonpdf": "^1.0",
+        "fpdf/fpdf": "^1.85",
+        "ext-mongodb": "^1.10",
+        "lib-mongodb-libbson": "^1.18"
+    }
+}
