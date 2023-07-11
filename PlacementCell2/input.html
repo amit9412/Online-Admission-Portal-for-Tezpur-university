@@ -1,0 +1,232 @@
+<!--<?php
+$student_id=10;
+
+$servername = "localhost";
+$username = "bob";
+$password = "123456";
+$db = "classDB";
+
+$conn = new mysqli($servername, $username, $password, $db);
+
+if($conn->connect_error){
+	die("Connection failed ".$conn->connect_error);
+}
+
+$sql = "select * from students where student_id='$student_id'";
+
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0){
+
+$row = $result->fetch_assoc();
+
+$name = $row["name"];
+$age = $row["age"];
+$gender = $row["gender"];
+$uniform = $row["uniform"];
+
+echo
+
+"
+<html >
+	<head>
+<body>
+<form action='phpUpdateFormScript.php' method='post'>
+Student ID: $student_id<br>
+<input type='hidden' name='student_id' value='$student_id'>
+Uniform: $uniform<br>
+Name: <input type='text' name='name' value='$name'><br>
+Age: <input type='text' name='age' value='$age'><br>
+Gender: <select name='gender'>
+	<option value='$gender' selected>$gender </option>
+	<option value='boy'>Boy</option>
+	<option value='girl'>Girl</option>
+	</select><br>
+<input type ='submit'>
+</form>
+
+</body>
+</html>--><!--";
+
+} else {
+	echo "Not Found";
+}
+$conn->close();
+
+?>-->
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Profile Edit</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="./login.css">
+    <!-- Favicon -->
+    <link href="img/TU_logo.png" rel="icon">
+  </head>
+  <body>
+
+ <!--Nav Bar-->
+ <nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;">
+
+	<div class="container-fluid">
+	  <a class="navbar-brand" href="#">
+		<img src="img/TU_logo.png" alt="Bootstrap" width="30" height="24">
+	  </a>
+	  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+		<div class="navbar-nav">
+		  <a class="nav-link "  href="indexv2.php">Home</a>
+		  <a class="nav-link" href="Dashboard2.php">Profile</a>
+		  <a class="nav-link" href="#">Applied</a>
+		  <a class="nav-link active" aria-current="page" href="input.html">Edit</a>
+		</div>
+	  </div>
+	</div>
+  </nav>
+  <!--Nnav_Bar ends-->
+<div class="input">
+  <!--Form Starts-->
+  <br>
+  <div class="sec">
+  Profile picture:<br><input type='file'value='$file_name'><br><br><!--show the photo--><hr>
+</div>
+<div class="sec">
+  <h2>General Information</h2>
+  Student ID: $student_id<br><br>
+  <input type='hidden' name='student_id' value='$student_id'>
+  Name: <input type='text' name='name' value='$name'>
+  Date of Birth: <input type='date' name='DoB' value='$DoB'><br><br>
+  Gender: <select name='gender'>
+    <option value='$gender' selected>$gender </option>
+    <option value='boy'>Female</option>
+    <option value='girl'>Male</option>
+    <option value='girl'>Other</option>
+    </select>
+  Address:<input type='text' name='Address' value='$Address'>
+  State:<select name="state">
+    <option value="Andhra Pradesh">Andhra Pradesh</option>
+    <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+    <option value="Assam">Assam</option>
+    <option value="Bihar">Bihar</option>
+    <option value="Chandigarh">Chandigarh</option>
+    <option value="Chhattisgarh">Chhattisgarh</option>
+    <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+    <option value="Daman and Diu">Daman and Diu</option>
+    <option value="Delhi">Delhi</option>
+    <option value="Lakshadweep">Lakshadweep</option>
+    <option value="Puducherry">Puducherry</option>
+    <option value="Goa">Goa</option>
+    <option value="Gujarat">Gujarat</option>
+    <option value="Haryana">Haryana</option>
+    <option value="Himachal Pradesh">Himachal Pradesh</option>
+    <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+    <option value="Jharkhand">Jharkhand</option>
+    <option value="Karnataka">Karnataka</option>
+    <option value="Kerala">Kerala</option>
+    <option value="Madhya Pradesh">Madhya Pradesh</option>
+    <option value="Maharashtra">Maharashtra</option>
+    <option value="Manipur">Manipur</option>
+    <option value="Meghalaya">Meghalaya</option>
+    <option value="Mizoram">Mizoram</option>
+    <option value="Nagaland">Nagaland</option>
+    <option value="Odisha">Odisha</option>
+    <option value="Punjab">Punjab</option>
+    <option value="Rajasthan">Rajasthan</option>
+    <option value="Sikkim">Sikkim</option>
+    <option value="Tamil Nadu">Tamil Nadu</option>
+    <option value="Telangana">Telangana</option>
+    <option value="Tripura">Tripura</option>
+    <option value="Uttar Pradesh">Uttar Pradesh</option>
+    <option value="Uttarakhand">Uttarakhand</option>
+    <option value="West Bengal">West Bengal</option>
+    </select><br><br>
+  Department:<select name="state"><option value="....">CSE</option></select>
+  Programme:<select name="state"><option value="....">MCA</option></select><br><br>
+  Batch: <input type='text' name='Batch' value='$batch'>
+  Phone no.:<input type='text' name='State' value='$Phone_no.'><br><br>
+  <hr>
+</div>
+
+  <div class="sec">
+  <h2>Educational background</h2>
+  <h4>Class X</h4>
+  Institute Name:<input type='text' name='name' value='$name'>
+  Roll no.:<input type='text' name='name' value='$name'><br><br>
+Year of Passing out:<input type='year' name='name' value='$name'>
+CGPA/Percntage:<input type='number' name='name' value='$num'><br><br>
+
+Marksheet:<input type='file'value='$file_name'><br><br><br>
+
+<h4>Class XII</h4>
+Institute Name:<input type='text' name='name' value='$name'>
+Roll no.:<input type='text' name='name' value='$name'><br><br>
+Year of Passing out:<input type='year' name='name' value='$name'>
+CGPA/Percntage:<input type='number' name='name' value='$num'><br><br>
+
+Marksheet:<input type='file'value='$file_name'><br><br><br>
+
+<h4>Graduation</h4>
+Institute Name:<input type='text' name='name' value='$name'>
+Roll no.:<input type='text' name='name' value='$name'><br><br>
+Year of Passing out:<input type='year' name='name' value='$name'>
+CGPA/Percntage:<input type='number' name='name' value='$num'><br><br>
+
+Marksheet:<input type='file'value='$file_name'><br><br>
+<hr>
+</div>
+
+<div class="sec">
+  <h2>Resume </h2>
+  Add Resume:<br><input type='file'value='$file_name'><br><hr>
+</div>
+
+<div class="sec">
+  <div class="row">
+    <div class="col">
+      
+  <h2>Work Experience </h2>
+  </div>
+  <div class="col">
+    <button type="button" class="btn btn-info " >+Add New</button><!--the below part should be only visible if the user clicks on this button-->
+  </div></div>
+  <!--
+  Company name:<input type='text' name='name' value='$name'>
+  Job title:<input type='text' name='name' value='$name'><br><br>
+  Position type:<input type='text' name='name' value='$name'>
+  Start Date:<input type='date' name='name' value='$name'>
+  End date:<input type='date' name='name' value='$name'><br><br>
+  Job location:<input type='text' name='name' value='$name'><Br>
+    -->
+    <hr>
+</div>
+
+<div class="sec">
+  <div class="row">
+    <div class="col">
+  <h2>Links </h2>
+  </div>
+  <div class="col">
+    <button type="button" class="btn btn-info " >+Add New</button><!--the below part should be only visible if the user clicks on this button-->
+  </div></div>
+  <!--
+  Website name:<input type='text' name='name' value='$name'>
+  Link:<input type='url' name='name' value='$name'><br><br>
+  
+    -->
+    <hr>
+</div>
+
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</div>
+  </body>
+</html>

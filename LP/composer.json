@@ -1,0 +1,10 @@
+{
+    "require": {
+        "aego/oauth2-yandex": "^0.2.2",
+        "mongodb/mongodb": "^1.9",
+        "ext-mongodb": "^1.10",
+        "ratiw/jsonpdf": "^1.0",
+        "fpdf/fpdf": "^1.85",
+        "lib-mongodb-libbson": "^1.18"
+    }
+}

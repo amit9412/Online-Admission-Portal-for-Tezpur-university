@@ -1,0 +1,60 @@
+:root {
+    --c-dark: #212529;
+    --c-brand: #4e57d4;
+    --c-brand-light: #6970dd;
+    --c-brand-rgb: 78, 87, 212;
+    --c-body: #727272;
+    --font-base: sans-serif;
+    --box-shadow: 0px 15px 25px rgba(0,0,0,0.08);
+    --transition: all 0.5s ease;
+    --offcanvas-width: 270px;
+    --topNavbarheight: 56px;
+}
+.btn-primary {
+    color: #212529;
+    background-color: rgb(111, 20, 222);
+    border-color: #711bd3
+}
+
+/*navbar*/
+.navbar{
+	background-color: #f1f1f8;
+	box-shadow: var(--box-shadow);
+}
+.navbar-nav .nav-link{
+	font-weight: 500 ;
+	color: rgb(243, 238, 238);
+}
+.navbar-nav .nav-link.active{
+	color: var(--c-brand);
+}
+/*hero*/
+#hero {
+	background: linear-gradient( rgba(0, 0, 0, 0.331), rgba(0, 0, 0, 0.34) ), url(../images/hero.png);
+    background-position: center;
+    background-size: cover;
+}
+
+/*offcanvas*/
+.sidebar-nav {
+    width: var(--offcanvas-width);
+}
+
+@media (min-width:992px) {
+    body{
+        overflow:auto !important;
+    }
+    .offcanvas-backdrop::before{
+        display: none;
+    }
+    .sidebar-nav{
+        transform: none;
+        visibility: visible !important;
+        top: var(--topNavbarheight);
+        height: calc(100% - var(--topNavbarheight));
+    }
+    
+}
+main{
+    margin-left: var(--offcanvas-width);
+}
